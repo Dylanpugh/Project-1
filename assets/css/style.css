@@ -1,5 +1,31 @@
+@font-face{
+    font-family: myFirstFont;
+    src: url("Theatrical.woff");
+}
+
 body{
     background: url("movies.jpg") center;
     
 }
 
+#header{
+    color: #FFD700;
+    font-size: 50px;
+    font-family: myFirstFont;
+    text-shadow: 3px 3px #800000;
+}
+
+
+hr{
+    border: 5px solid #800000;
+}
+
+button{
+    text-align: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.btn{
+    margin-left: 40px;
+}
