@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>My First Bootstrap Page</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+  
+<div class="container">
+  
+    
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      
+      <div class="modal-body">
+
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>        
+        <!-- 16:9 aspect ratio -->
+<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="" id="video"  allowscriptaccess="always">></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
+    var queryURL = "https://api.myapifilms.com/imdb/comingSoon?token=3e625681-9c08-4fcf-957d-7b9be810a145&format=json&language=en-us&date=2019-01";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+      dataType: "jsonp"
+    }).then(function(response) {
+      console.log(response);
+      console.log(response.data);
+      console.log(response.data.comingSoon[0]);
+
+      for (var i=0; i < response.data.comingSoon.length; i++) {
+        var appendDateHeader = $("<div class='row'><h3>"+response.data.comingSoon[i].date+"</h3></div>").appendTo(".container");
+        var appendrow = $("<div class='row'></div>").appendTo(".container");
+        for (var j=0; j< response.data.comingSoon[i].movies.length; j++) {
+          $("<div class='col'><img src='" + response.data.comingSoon[i].movies[j].urlPoster  + 
+          "' class='img-responsive img-thumbnail'><button type='button' class='btn btn-primary video-btn' data-toggle='modal' data-src='"+response.data.comingSoon[i].movies[j].title+"' data-target='#myModal'>Play Trailer</button></div>").appendTo(appendrow);
+        }
+        
+      }
+    });
+// ---------------------------------------------------------
+
+
+var videoSrc;  
+$(document).on("click",".video-btn",function() {
+    videoSrc = $(this).data( "src" );
+
+    console.log(videoSrc);
+    getRequest(videoSrc);
+    function getRequest(videoSrc) {
+    var url = 'https://www.googleapis.com/youtube/v3/search';
+    var params = {
+        part: 'snippet',
+        key: 'AIzaSyB4hCVbW3IzYNSdCGwQpkFW5ubHyv2a2go',
+        q: videoSrc
+    };
+  
+    $.getJSON(url, params, showResults);
+}
+
+function showResults(results) {
+    var entries = results.items[0].id.videoId;
+    console.log(entries);
+    $("#video").attr('src', "https://www.youtube.com/embed/"+entries+"?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1" );
+}
+
+
+
+ 
+
+
+});
+
+    console.log("This console.log will probably happen first because of asynchronicity.");
+    var x = 2;
+    var y = 10;
+    var z = 13;
+    console.log("We can also assign some variables and do some arithmetic while we wait too: 2 + 10 + 13 = ", x + y + z);
+  </script>
+
+</body>
+</html>
