@@ -29,3 +29,42 @@ button{
 .btn{
     margin-left: 40px;
 }
+
+#card {
+    background-color: rgb(124, 115, 115);
+}
+
+#card1 {
+    background-color: rgb(124, 115, 115);
+}
+
+#card2 {
+    background-color: rgb(124, 115, 115);
+}
+
+#bar {
+    background-color: rgb(124, 115, 115);
+}
+
+#activeItem {
+    color: #ffd700;
+}
+
+#item {
+    color: #ffd700;
+}
+
+#header {
+    color: #ffd700;
+}
+
+#info {
+    color: #800000;
+}
+
+#description {
+    color: #800000;
+}
+
+
+
