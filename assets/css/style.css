@@ -108,4 +108,18 @@ button{
   cursor: pointer;
 }
 
+iframe{
+    height: 600px;
+    width: 800px;
+}
 
+.modal-content{
+    background-color: transparent;
+    border: none;
+    margin: auto;
+    max-width: 800px;
+}
+
+.close {
+    display:none;
+}
