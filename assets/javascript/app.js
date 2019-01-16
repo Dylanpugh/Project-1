@@ -1,6 +1,3 @@
-$('.ui.modal')
- .modal('show')
-;
 
 var settings = {
     "async": true,
@@ -89,8 +86,29 @@ var settings = {
   
   });
   
-      console.log("This console.log will probably happen first because of asynchronicity.");
-      var x = 2;
-      var y = 10;
-      var z = 13;
-      console.log("We can also assign some variables and do some arithmetic while we wait too: 2 + 10 + 13 = ", x + y + z);
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+	  
