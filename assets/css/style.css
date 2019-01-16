@@ -30,7 +30,7 @@ button{
     margin-left: 40px;
 }
 
-#card {
+#modal {
     background-color: rgb(124, 115, 115);
 }
 
@@ -42,11 +42,11 @@ button{
     background-color: rgb(124, 115, 115);
 }
 
-#bar {
+#modal1 , #bar {
     background-color: rgb(124, 115, 115);
 }
 
-#activeItem {
+#ui.centered.card {
     color: #ffd700;
 }
 

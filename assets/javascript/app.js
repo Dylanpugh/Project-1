@@ -16,7 +16,7 @@ var settings = {
   
   
         for (var i=0; i < response.results.length; i++) {
-          var appendrow = $("<div class='ui centered card'></div>").appendTo("#movie-container");
+          var appendrow = $("<div class='ui centered card' id='modal1'></div>").appendTo("#movie-container");
             $("<div class='image'><img src='https://image.tmdb.org/t/p/w500/" + response.results[i].poster_path  + 
             "'><br><h4>"+response.results[i].title+" Release Date: "+response.results[i].release_date+"</h4><button type='button' class='ui red basic button' data-toggle='modal' data-src='"+response.results[i].title+"' data-target='#myModal'>Play Trailer</button></div>").appendTo(appendrow);
         }
