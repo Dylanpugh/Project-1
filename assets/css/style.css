@@ -12,7 +12,9 @@ body{
     color: #FFD700;
     font-size: 50px;
     font-family: myFirstFont;
-    text-shadow: 3px 3px #800000;
+    text-shadow: 10px 10px #800000;
+    
+    
 }
 
 
@@ -20,27 +22,8 @@ hr{
     border: 5px solid #800000;
 }
 
-button{
-    text-align: center;
-    padding: 10px;
-    justify-content: space-between;
-}
 
-.btn{
-    margin-left: 40px;
-}
 
-#card {
-    background-color: rgb(124, 115, 115);
-}
-
-#card1 {
-    background-color: rgb(124, 115, 115);
-}
-
-#card2 {
-    background-color: rgb(124, 115, 115);
-}
 
 #bar {
     background-color: rgb(124, 115, 115);
@@ -58,13 +41,19 @@ button{
     color: #ffd700;
 }
 
-#info {
-    color: #800000;
-}
+
 
 #description {
     color: #800000;
 }
+
+.movie-container {
+    background-color: #000;
+}
+
+.modal-backdrop {
+    background-color: red;
+ }
 
 
 
@@ -114,7 +103,7 @@ iframe{
 }
 
 .modal-content{
-    background-color: transparent;
+    background-color: black;
     border: none;
     margin: auto;
     max-width: 800px;
@@ -123,3 +112,12 @@ iframe{
 .close {
     display:none;
 }
+
+h4 {
+    color: #ffd700;
+}
+
+.ui.centered.card{
+    background-color: black;
+ }
+

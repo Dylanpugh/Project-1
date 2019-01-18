@@ -16,7 +16,7 @@ var settings = {
         for (var i=0; i < response.results.length; i++) {
           var appendrow = $("<div class='ui centered card'></div>").appendTo("#movie-container");
             $("<div class='image'><img src='https://image.tmdb.org/t/p/w500/" + response.results[i].poster_path  + 
-            "'><br><h4>"+response.results[i].title+" Release Date: "+response.results[i].release_date+"</h4><button type='button' class='ui red basic button video-btn' data-toggle='modal' data-src='"+response.results[i].title+"' data-target='#myModal'>Play Trailer</button></div>").appendTo(appendrow);
+            "'><br><h4 class='content'>"+response.results[i].title+" Release Date: "+response.results[i].release_date+"</h4><button type='button' class='ui yellow basic button video-btn' data-toggle='modal' data-src='"+response.results[i].title+"' data-target='#myModal'>Play Trailer</button></div>").appendTo(appendrow);
         }
         //create pagination
         for (var j=1;j<=response.total_pages;j++) {
@@ -79,7 +79,7 @@ var settings = {
         for (var i=0; i < response.results.length; i++) {
           var appendrow = $("<div class='ui centered card'></div>").appendTo("#movie-container");
             $("<div class='image'><img src='https://image.tmdb.org/t/p/w500/" + response.results[i].poster_path  + 
-            "'><br><h4>"+response.results[i].title+" Release Date: "+response.results[i].release_date+"</h4><button type='button' class='ui red basic button video-btn' data-toggle='modal' data-src='"+response.results[i].title+"' data-target='#myModal'>Play Trailer</button></div>").appendTo(appendrow);
+            "'><br><h4 class='content'>"+response.results[i].title+" Release Date: "+response.results[i].release_date+"</h4><button type='button' class='ui yellow basic button video-btn' data-toggle='modal' data-src='"+response.results[i].title+"' data-target='#myModal'>Play Trailer</button></div>").appendTo(appendrow);
         }
         for (var j=1;j<=response.total_pages;j++) {
             var append_pagination = $('<li class="page-item"><a class="page-link" data-page="'+j+'"href="#">'+j+'</a></li>').appendTo($(".pagination"));
