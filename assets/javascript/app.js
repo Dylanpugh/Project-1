@@ -1,10 +1,9 @@
 var url = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=2019&page=1&api_key=6f0a2ab68362abacd4411d8533c75937';
-var genreParameter = '';
 $( document ).ready(function() {
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": url,
+    "url": "https://api.themoviedb.org/3/discover/movie?primary_release_year=2019&page=1&api_key=6f0a2ab68362abacd4411d8533c75937",
     "method": "GET",
     "headers": {},
     "data": "{}"
