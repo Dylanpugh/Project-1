@@ -12,7 +12,7 @@ body{
     color: #FFD700;
     font-size: 50px;
     font-family: myFirstFont;
-    text-shadow: 10px 10px #800000;
+    text-shadow: 4px 4px #800000;
     
     
 }
@@ -22,7 +22,11 @@ hr{
     border: 5px solid #800000;
 }
 
+h3{
+    color: #800000;
+    text-shadow: 1px 1px #FFD700;
 
+}
 
 
 #bar {
