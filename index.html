@@ -9,7 +9,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
-
 </head>
 <body>
 
@@ -40,7 +39,36 @@
                 <a class="item" id="item">
                   Favorites
                 </a>
+				
             <div class="right menu">
+			<div class="item">
+			<div class="ui selection dropdown">
+  <input type="hidden" name="genre">
+  <i class="dropdown icon"></i>
+  <div class="default text">Genre</div>
+  <div class="menu">
+    <div class="item genre" data-genre="28">Action</div>
+    <div class="item genre" data-genre="12">Adventure</div>
+    <div class="item genre" data-genre="16">Animation</div>
+    <div class="item genre" data-genre="35">Comedy</div>
+    <div class="item genre" data-genre="80">Crime</div>
+    <div class="item genre" data-genre="99">Documentary</div>
+    <div class="item genre" data-genre="18">Drama</div>
+    <div class="item genre" data-genre="10751">Family</div>
+    <div class="item genre" data-genre="14">Fantasy</div>
+    <div class="item genre" data-genre="36">History</div>
+    <div class="item genre" data-genre="27">Horror</div>
+    <div class="item genre" data-genre="10402">Music</div>
+    <div class="item genre" data-genre="9648">Mystery</div>
+    <div class="item genre" data-genre="10749">Romance</div>
+    <div class="item genre" data-genre="878">Science Fiction</div>
+    <div class="item genre" data-genre="10770">TV Movie</div>
+    <div class="item genre" data-genre="53">Thriller</div>
+    <div class="item genre" data-genre="10752">War</div>
+    <div class="item genre" data-genre="37">Western</div>
+  </div>
+</div>
+</div>
                 <div class="item">
                 <div class="ui transparent icon input">
                     <input type="text" placeholder="Search...">
@@ -51,7 +79,10 @@
         </div>
 
         <hr>
-
+<div id="pagination-container">
+    
+    <ul class="pagination"></ul>
+  </div> 
 
         <div class="ui link cards" id="movie-container">
               
