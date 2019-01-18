@@ -1,8 +1,10 @@
-
+var url = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=2019&page=1&api_key=6f0a2ab68362abacd4411d8533c75937';
+var genreParameter = '';
+$( document ).ready(function() {
 var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://api.themoviedb.org/3/discover/movie?primary_release_year=2019&page=1&api_key=6f0a2ab68362abacd4411d8533c75937",
+    "url": url,
     "method": "GET",
     "headers": {},
     "data": "{}"
@@ -23,7 +25,7 @@ var settings = {
         }
       });
   // ---------------------------------------------------------
-  
+  });
   
   var videoSrc;  
   $(document).on("click",".video-btn",function() {
@@ -48,11 +50,6 @@ var settings = {
       $("#video").attr('src', "https://www.youtube.com/embed/"+entries+"?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1" );
   }
   
-  
-  
-   
-  
-  
   });
   
   
@@ -62,7 +59,7 @@ var settings = {
     var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "https://api.themoviedb.org/3/discover/movie?primary_release_year=2019&page="+page_number+"&api_key=6f0a2ab68362abacd4411d8533c75937",
+    "url": "https://api.themoviedb.org/3/discover/movie?primary_release_year=2019&&api_key=6f0a2ab68362abacd4411d8533c75937&page="+page_number,
     "method": "GET",
     "headers": {},
     "data": "{}"
@@ -70,21 +67,55 @@ var settings = {
   
   $.ajax(settings).done(function (response) {
     console.log(response.results);
-  
+  $( "#movie-container" ).empty();
     
         for (var i=0; i < response.results.length; i++) {
           var appendrow = $("<div class='ui centered card'></div>").appendTo("#movie-container");
             $("<div class='image'><img src='https://image.tmdb.org/t/p/w500/" + response.results[i].poster_path  + 
             "'><br><h4>"+response.results[i].title+" Release Date: "+response.results[i].release_date+"</h4><button type='button' class='ui red basic button video-btn' data-toggle='modal' data-src='"+response.results[i].title+"' data-target='#myModal'>Play Trailer</button></div>").appendTo(appendrow);
         }
-        for (var j=1;j<=response.total_pages;j++) {
-            var append_pagination = $('<li class="page-item"><a class="page-link" data-page="'+j+'"href="#">'+j+'</a></li>').appendTo($(".pagination"));
         
-        }
       });
   
   
   });
+  
+  // Genres
+  $(document).on("click",".genre",function() {
+    genre = $(this).attr('data-genre');
+    var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://api.themoviedb.org/3/discover/movie?with_genres="+genre+"&primary_release_year=2019&api_key=6f0a2ab68362abacd4411d8533c75937",
+    "method": "GET",
+    "headers": {},
+    "data": "{}"
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response.results);
+  $( "#movie-container" ).empty();
+    $( ".pagination" ).empty();
+        for (var i=0; i < response.results.length; i++) {
+          var appendrow = $("<div class='ui centered card'></div>").appendTo("#movie-container");
+            $("<div class='image'><img src='https://image.tmdb.org/t/p/w500/" + response.results[i].poster_path  + 
+            "'><br><h4>"+response.results[i].title+" Release Date: "+response.results[i].release_date+"</h4><button type='button' class='ui red basic button video-btn' data-toggle='modal' data-src='"+response.results[i].title+"' data-target='#myModal'>Play Trailer</button></div>").appendTo(appendrow);
+        }
+		for (var j=1;j<=response.total_pages;j++) {
+            var append_pagination = $('<li class="page-item"><a class="page-link" data-page="'+j+'"href="#">'+j+'</a></li>').appendTo($(".pagination"));
+        
+        }
+        
+      });
+  
+  
+  });
+  
+  
+  
+  
+  
+  
   
 var modal = document.getElementById('myModal');
 
@@ -92,7 +123,7 @@ var btn = $(".video-btn");
 
 var span = document.getElementsByClassName("close")[0];
  
-$(document).on("click",btn,function() {
+$(document).on("click",".video-btn",function() {
 
   modal.style.display = "block";
   });
@@ -106,4 +137,9 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+
+$('.ui.dropdown')
+  .dropdown()
+;
 	  
