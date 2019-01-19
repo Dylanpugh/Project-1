@@ -51,6 +51,10 @@ h3{
     color: #800000;
 }
 
+.ui.centered.card {
+	width:200px;
+}
+
 .movie-container {
     background-color: #000;
 }
@@ -121,11 +125,41 @@ h4 {
     color: #ffd700;
 }
 
+.video-btn {
+	margin-bottom:10px !important;
+}
+
+.card {
+	text-align:center !important;
+}
+.ui.cards a.card:hover, .ui.link.card:hover, .ui.link.cards .card:hover, a.ui.card:hover {
+background-color:rgba(202, 202, 202, 0.45);
+}
 .ui.centered.card{
     background-color: black;
  }
 
 .pagination li {
   display:inline-block;
-  padding:5px;
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  
+}
+.pagination {
+  display: inline-block;
+}
+
+
+
+.pagination li.active {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination li:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
 }
